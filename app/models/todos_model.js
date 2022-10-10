@@ -31,7 +31,7 @@ const todoSchema = new mongoose_1.Schema({
     },
     time: {
         type: Date,
-        required: true
+        default: Date.now()
     }
 });
 exports.default = mongoose_1.default.model('Todo', todoSchema);

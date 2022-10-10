@@ -7,13 +7,13 @@ import bodyParser from "body-parser";
 const router = Router();
 
 
-router.get('/all', async (req, res, next) => {
+router.post('/all', async (req, res, next) => {
     const body = req.body as CreateTodoRequest;
-    await todoModel.create({
+    const result = await todoModel.create({
         name: body.name,
-        time: body.name
+        time: body.date
     })
-    res.status(200).json({ 'message': true })
+    res.status(200).json({ 'message': result })
 })
 
 export default router;

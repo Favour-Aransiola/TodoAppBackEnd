@@ -1,5 +1,5 @@
 type CreateTodoRequest = {
     name: String,
-    date: Date
+    date: Date | undefined
 }
 export default CreateTodoRequest;

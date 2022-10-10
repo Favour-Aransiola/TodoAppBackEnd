@@ -15,12 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const todos_model_1 = __importDefault(require("../models/todos_model"));
 const router = (0, express_1.Router)();
-router.get('/all', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/all', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const body = req.body;
-    yield todos_model_1.default.create({
+    const result = yield todos_model_1.default.create({
         name: body.name,
-        time: body.name
+        time: body.date
     });
-    res.status(200).json({ 'message': true });
+    res.status(200).json({ 'message': result });
 }));
 exports.default = router;
